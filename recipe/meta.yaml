@@ -1,5 +1,5 @@
 {% set name = "pypmc" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3a199b84f961ea632c0e90621e76848e70d6a9051422ead7d5faabdd94e557c8
+  sha256: bcfee5131607c3e55dd5d6e4711b9e392174d317e9c22af051cd613bf16c348a
 
 build:
   number: 0
