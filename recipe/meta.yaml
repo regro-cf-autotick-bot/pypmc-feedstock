@@ -1,5 +1,5 @@
 {% set name = "pypmc" %}
-{% set version = "1.2" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 17909307639f8fabbb1248031befdeb34e5e87ba0a06ed1ebe1dd262b303e799
+  sha256: 3a199b84f961ea632c0e90621e76848e70d6a9051422ead7d5faabdd94e557c8
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py<30 or python_impl == "pypy" or win]
   script: {{ PYTHON }} -m pip install .[plotting,parallelization] -vv
 
@@ -48,9 +48,9 @@ about:
 
   description: |
     pypmc is a python package focusing on adaptive importance sampling. It can be used for integration and sampling from a user-defined target density. A typical application is Bayesian inference, where one wants to sample from the posterior to marginalize over parameters and to compute the evidence. The key idea is to create a good proposal density by adapting a mixture of Gaussian or student’s t components to the target density. The package is able to efficiently integrate multimodal functions in up to about 30-40 dimensions at the level of 1% accuracy or less. For many problems, this is achieved without requiring any manual input from the user about details of the function. Importance sampling supports parallelization on multiple machines via mpi4py.
-    
+
     Useful tools that can be used stand-alone include:
-    
+
     * importance sampling (sampling & integration)
     * adaptive Markov chain Monte Carlo (sampling)
     * variational Bayes (clustering)
