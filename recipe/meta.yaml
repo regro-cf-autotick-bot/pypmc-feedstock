@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: bcfee5131607c3e55dd5d6e4711b9e392174d317e9c22af051cd613bf16c348a
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<30 or python_impl == "pypy" or win]
   script: {{ PYTHON }} -m pip install .[plotting,parallelization] -vv
 
