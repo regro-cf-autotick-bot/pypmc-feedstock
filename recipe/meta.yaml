@@ -1,16 +1,16 @@
 {% set name = "pypmc" %}
-{% set version = "1.2.2" %}
+{% set version = "1.2.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bcfee5131607c3e55dd5d6e4711b9e392174d317e9c22af051cd613bf16c348a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 8154fa9d2c71055e899a8a4f32c3dc7cdb3a57ba76b848fd653827301d33959d
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<30 or python_impl == "pypy" or win]
   script: {{ PYTHON }} -m pip install .[plotting,parallelization] -vv
 
